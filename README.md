@@ -1,5 +1,5 @@
 # HL7Project
-----------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
    **Background**
 Health Level 7 is a set of international standards for transfer of clinical and administrative data between software applications used by various healthcare providers.
 
@@ -15,6 +15,8 @@ Every message has MSH as its first segment, which includes a field that identifi
 The message type determines the expected segment types in the message. The segment types used in a particular message type are specified by the segment grammar notation used in the HL7 standards.
 
   Example: 
+  
+  
       "MSH|^~\&|MegaReg|XYZHospC|SuperOE|XYZImgCtr|20060529090131-0500||ADT^A01^ADT_A01|01052901|P|2.5
         EVN||200605290901||||200605290900
         PID|||56782445^^^UAReg^PI||KLEINSAMPLE^BARRY^Q^JR||19620910|M||2028-9^^HL70005^RA99113^^XYZ|260 GOODWIN CREST DRIVE^^BIRMINGHAM^AL^35209^^M~NICKELL’S PICKLES^10000 W 100TH AVE^BIRMINGHAM^AL^35200^^O|||||||0105I30001^^^99DEF^AN
@@ -23,11 +25,33 @@ The message type determines the expected segment types in the message. The segme
         OBX|2|NM|^Body Weight||79|kg^Kilogram^ISO+|||||F
         AL1|1||^ASPIRIN
         DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A"
-----------------------------------------------------------------------------------------------------------------------------------------
-   
-   **Purpose of Application:**
-
+------------------------------------------------------------------------------------------------------------------------------------------------
+**Purpose of Application:
+**
 Parse and stringify all the necessary parameters of the PID and  PV1 section of the segment (ie. Name, gender, address, doctor, etc) and return a HL7-encoded string.
+
+Example Inputs: 
+Inputs:
+
+      260 Goodwin Crest Dr,
+      Birmingham, AL, 35209
+      
+      M Nickell\s Piockeels
+      10000 100th Ave
+      Birmingham, AL , 35200
+      
+      
+      
+Output:
+        PID|||56782445^^^UAReg^PI||KLEINSAMPLE^BARRY^Q^JR||19620910|M||2028-9^^HL70005^RA99113^^XYZ|260 GOODWIN CREST DRIVE^^BIRMINGHAM^AL^35209^^M~NICKELL’S PICKLES^10000 W 100TH AVE^BIRMINGHAM^AL^35200^^O|||||||0105I30001^^^99DEF^AN
+        PV1||I|W^389^1^UABH^^^^3||||12345^MORGAN^REX^J^^^MD^0010^UAMC^L||67890^GRAINGER^LUCY^X^^^MD^0010^UAMC^L|MED|||||A0||13579^POTTER^SHERMAN^T^^^MD^0010^UAMC^L|||||||||||||||||||||||||||200605290900
+
+
+
+Resources for necessary inputs:
+https://corepointhealth.com/resource-center/hl7-resources/hl7-pid-segment
+https://corepointhealth.com/resource-center/hl7-resources/hl7-pv1-patient-visit-information-segment
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
