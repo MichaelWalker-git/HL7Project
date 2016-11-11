@@ -1,66 +1,111 @@
 <div class="container">
-  <h2>HL7 Patient Identification (PID) and Patient Visit (PV1) Segments</h2>
-  <form #f=""ngForm>
+  <h2>Patient Identification (PID) </h2>
+  <form (ngSubmit)=""onSubmit(g) #g="ngForm">
+    <div ngModelGroup="PIData">
+      <br>
+      <h3>Patient Identification</h3>
+      <div class="form-group">
+        <label for="extPatientId">Patient Id(External ID) </label>
+        <input type="text"
+               class="form-control"
+               id="extPatientId"
+               [(ngModel)] = "PID.extPatientId"
+               required
+        >
+      </div>
+      <div class="form-group">
+        <label for="intPatientId">Patient Id(Internal ID)  </label>
+        <input type="text"
+               class="form-control"
+               id="intPatientId"
+               [(ngModel)] = "PID.intPatientId"
+        >
+      </div>
+      <div class="form-group">
+        <label for="name">Patient Name </label>
+        <input type="text"
+               class="form-control"
+               id="name"
+               [(ngModel)] = "PID.name"
+               required>
+      </div>
+      <div class="form-group">
+        <label for="maidenName">Mother's Maiden Name </label>
+        <input type="text"
+               class="form-control"
+               id="maidenName"
+               [(ngModel)] = "PID.maidenName"
+        >
+      </div>
+      <div class="form-group">
+        <label for="birth">Date and Time of Birth</label>
+        <input type="datetime-local"
+               class="form-control"
+               id="birth"
+               [(ngModel)] = "PID.birthday"
+        >
+      </div>
+      <div class="form-group">
+        <label for="sex">Sex </label>
+        <input type="text"
+               class="form-control"
+               id="sex"
+               [(ngModel)] = "PID.sex"
+               required>
+      </div>
+      <div class="form-group">
+        <label for="marital">Marital Status: </label>
+        <input type="text"
+               class="form-control"
+               id="marital"
+               [(ngModel)] = "PID.marital"
+        >
+      </div>
+      <div class="form-group">
+        <label for="address">Patient Address </label>
+        <input type="text"
+               class="form-control"
+               id="address"
+               [(ngModel)] = "PID.address"
+               required>
+      </div>
+      <div class="form-group">
+        <label for="phoneNum">Phone Number - Mobile  </label>
+        <input type="text"
+               class="form-control"
+               id="number"
+               [(ngModel)] = "PID.mobileNum"
+               required
+        >
+      </div>
+      <div class="form-group">
+        <label for="homePhone">Patient Number - Home </label>
+        <input type="text"
+               class="form-control"
+               id="homePhone"
+               [(ngModel)] = "PID.homeNum"
+        >
+      </div>
+      <div class="form-group">
+        <label for="ssn">SSN Number - Patient </label>
+        <input type="text"
+               class="form-control"
+               id="ssn"
+               [(ngModel)] = "PID.ssn"
+        >
+      </div>
+      <div class="form-group">
+        <label for="driverLicense">Driver License - Patient</label>
+        <input type="text"
+               class="form-control"
+               id="driverLicense"
+               [(ngModel)] = "PID.driverLicense"
+        >
+      </div>
 
-    <br>
-    <h3>Patient Identification</h3>
-
-    <div class="form-group">
-    <label for="extPatientId">Patient Id(External ID) </label>
-    <input type="text" class="form-control" id="extPatientId" required >
-  </div>
-    <div class="form-group">
-      <label for="intPatientId">Patient Id(Internal ID)  </label>
-      <input type="text" class="form-control" id="intPatientId">
-    </div>
-    <div class="form-group">
-      <label for="name">Patient Name </label>
-      <input type="text" class="form-control" id="name" required>
-    </div>
-    <div class="form-group">
-      <label for="maidenName">Mother's Maiden Name </label>
-      <input type="text" class="form-control" id="maidenName">
-    </div>
-    <div class="form-group">
-      <label for="birth">Date and Time of Birth</label>
-      <input type="datetime-local" class="form-control" id="birth">
-    </div>
-    <div class="form-group">
-      <label for="sex">Sex </label>
-      <input type="text" class="form-control" id="sex" required>
-    </div>
-    <div class="form-group">
-      <label for="marital">Marital Status: </label>
-      <input type="text" class="form-control" id="marital">
-    </div>
-    <div class="form-group">
-      <label for="address">Patient Address </label>
-      <input type="text" class="form-control" id="address" required>
-    </div>
-    <div class="form-group">
-      <label for="phoneNum">Phone Number - Mobile  </label>
-      <input type="text" class="form-control" id="phoneNum">
-    </div>
-    <div class="form-group">
-      <label for="homePhone">Patient Number - Home </label>
-      <input type="text" class="form-control" id="homePhone">
-    </div>
-    <div class="form-group">
-      <label for="ssn">SSN Number - Patient </label>
-      <input type="text" class="form-control" id="ssn">
-    </div>
-    <div class="form-group">
-      <label for="driverLicense">Driver License - Patient</label>
-      <input type="text" class="form-control" id="driverLicense">
     </div>
 
-
-
-  <br>
-    <br>
-
-    <button type="submit" class="btn btn-default">Parse Code</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!g.valid">Submit PID Data</button>
   </form>
-
-  <h2>Results: (Below) </h2>
 </div>
+<h2>Results: (Below) </h2>

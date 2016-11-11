@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { InputBoxComponent } from './input-box/input-box.component';
-import { InputComponent } from './input/input.component';
+import { InputComponent } from './patientVisit/input.component';
 
 @NgModule({
   declarations: [

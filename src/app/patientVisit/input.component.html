@@ -1,0 +1,102 @@
+<div class="container">
+  <h2>Patient Visit (PV1) Segments</h2>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+    <br>
+    <h3>Patient Visit Information</h3>
+    <div class="form-group">
+      <label for="name">Set ID </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Admit Date/ Time</label>
+      <input type="datetime-local" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Discharge Date/Time</label>
+      <input type="datetime-local" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Bed Status </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Patient Class </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Assigned Patient Location</label>
+      <input type="datetime" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Admission Type </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Readmit Number</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Prior Patient Location</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Attending Doctor </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Referred Doctor </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Consulting Doctor </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Hospital Service</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Temporary Location </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Preadmit Test Indicator</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Admit Source</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Ambulatory Status</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">VIP Indicator</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Admitting Doctor</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Patient Type </label>
+      <input type="text" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="name">Visit Number</label>
+      <input type="number" class="form-control" id="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Account Status</label>
+      <input type="text" class="form-control" id="name">
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit PV1 Data</button>
+
+  </form>
+</div>
