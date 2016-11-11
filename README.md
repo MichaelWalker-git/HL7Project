@@ -1,6 +1,8 @@
 # HL7Project
 ------------------------------------------------------------------------------------------------------------------------------------------------
    **Background**
+  
+  
 Health Level 7 is a set of international standards for transfer of clinical and administrative data between software applications used by various healthcare providers.
 
 Hospitals and other healthcare provider organizations typically have many different computer systems used for everything from billing records to patient tracking. All of these systems should communicate with each other (or "interface") when they receive new information, or when they wish to retrieve information, but not all do so.
@@ -26,8 +28,11 @@ The message type determines the expected segment types in the message. The segme
         AL1|1||^ASPIRIN
         DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A"
 ------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 **Purpose of Application:
 **
+
 Parse and stringify all the necessary parameters of the PID and  PV1 section of the segment (ie. Name, gender, address, doctor, etc) and return a HL7-encoded string.
 
 Example Inputs: 
