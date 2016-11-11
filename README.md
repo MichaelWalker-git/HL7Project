@@ -24,8 +24,8 @@ The message type determines the expected segment types in the message. The segme
         AL1|1||^ASPIRIN
         DG1|1||786.50^CHEST PAIN, UNSPECIFIED^I9|||A"
 ------------------------------------------------------------------------------------------------------------------------------------------------
-   **Purpose of Application:**
-
+**Purpose of Application:
+**
 Parse and stringify all the necessary parameters of the PID and  PV1 section of the segment (ie. Name, gender, address, doctor, etc) and return a HL7-encoded string.
 
 
