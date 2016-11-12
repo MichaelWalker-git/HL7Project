@@ -36,16 +36,8 @@ export class InputComponent {
     visitNum: ''
   };
 
-  onSubmit(form: NgForm){
-    var result = [];
-    for(var prop in form.value.PIData){
-      var entry = form.value.PIData[prop];
-      if(!entry){
-        result.push(' ' +  "||");
-      }
-      result.push(form.value.PIData[prop] + "||")
-    }
+  onSubmit(form: NgForm) {
+
+
   }
-
-
 }

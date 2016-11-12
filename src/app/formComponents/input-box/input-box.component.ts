@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from "@angular/forms";
+var message = require ('./../message');
 
 @Component({
   selector: 'app-input-box',
@@ -16,24 +17,33 @@ import { NgForm } from "@angular/forms";
 })
 export class InputBoxComponent {
   PID = {
-    table: 'PV1',
-    extPatientId: ' ',
-    intPatientId: ' ',
+    table: 'PID',
+    extPatientId: '',
+    intPatientId: '',
     name: '',
     maidenName: '',
-    birthday: ' ',
+    birthday: '',
     sex: '',
-    marital: ' ',
+    marital: '',
     address: '',
     mobileNum: '',
-    homeNum: ' ',
-    ssn: ' ',
-    driverLicense: ' '
+    homeNum: '',
+    ssn: '',
+    driverLicense: ''
 
   }
 
   onSubmit(form: NgForm){
-    console.log(form.value);
+    event.preventDefault();
+    var result = [];
+    for(let prop in form.value.PIData){
+      result.push(form.value.PIData[prop])
+    }
+    console.log("What?")
+    var final = new message(result);
+    console.log(final);
+
+
   }
 
 }

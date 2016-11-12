@@ -18,8 +18,7 @@ function field() {
       }
     }
   }
-}
-
+};
 
 field.prototype.toString = function(delimiters) {
   var returnString = "";
@@ -36,6 +35,5 @@ field.prototype.toString = function(delimiters) {
   }
   return returnString;
 };
-
 
 module.exports = field;
