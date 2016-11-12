@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { InputBoxComponent } from './input-box/input-box.component';
-import { InputComponent } from './patientVisit/input.component';
+import { InputBoxComponent } from './formComponents/input-box/input-box.component';
+import { InputComponent } from './formComponents/patientVisit/input.component';
 
 @NgModule({
   declarations: [

@@ -3,7 +3,7 @@ import { NgForm } from "@angular/forms";
 
 @Component({
   selector: 'app-input',
-  templateUrl: './input.component.html',
+  templateUrl: 'input.component.html',
   styles: [`
       .ng-valid[required], .ng-valid.required  {
         border-left: 5px solid #42A948; /* green */
@@ -16,6 +16,7 @@ import { NgForm } from "@angular/forms";
 })
 export class InputComponent {
   PV1 = {
+    table: 'PID',
     setId: '',
     admitDateTime: '',
     dischargeDateTime: '',
@@ -24,13 +25,27 @@ export class InputComponent {
     patientLoc: '',
     admType: '',
     readmitNum: '',
-
-  }
+    patLoc: '',
+    attendDr: '',
+    refDr: '',
+    consultDr: '',
+    hospServ: '',
+    tempLoc: '',
+    admitDr: '',
+    patientType: '',
+    visitNum: ''
+  };
 
   onSubmit(form: NgForm){
-    console.log(form.value);
+    var result = [];
+    for(var prop in form.value.PIData){
+      var entry = form.value.PIData[prop];
+      if(!entry){
+        result.push(' ' +  "||");
+      }
+      result.push(form.value.PIData[prop] + "||")
+    }
   }
-
 
 
 }

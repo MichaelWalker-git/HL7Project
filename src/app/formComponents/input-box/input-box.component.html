@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Patient Identification (PID) </h2>
-  <form #f="ngForm">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div ngModelGroup="PIData">
       <br>
       <h3>Patient Identification</h3>
