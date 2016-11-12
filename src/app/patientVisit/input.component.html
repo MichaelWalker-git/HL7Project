@@ -1,99 +1,144 @@
 <div class="container">
   <h2>Patient Visit (PV1) Segments</h2>
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-
-    <br>
+  <form #f="ngForm">
     <h3>Patient Visit Information</h3>
     <div class="form-group">
-      <label for="name">Set ID </label>
-      <input type="text" class="form-control" id="name">
+      <label for="setId">Set ID </label>
+      <input type="text"
+             class="form-control"
+             id="setId"
+             [(ngModel)]="PV1.setId" name="setId"
+             required>
     </div>
     <div class="form-group">
-      <label for="name">Admit Date/ Time</label>
-      <input type="datetime-local" class="form-control" id="name">
+      <label for="admitDateTime">Admit Date/ Time</label>
+      <input type="datetime-local"
+             class="form-control"
+             id="admitDateTime"
+             [(ngModel)]="PV1.admitDateTime" name="admitDateTime"
+             required>
     </div>
     <div class="form-group">
-      <label for="name">Discharge Date/Time</label>
-      <input type="datetime-local" class="form-control" id="name">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Bed Status </label>
-      <input type="text" class="form-control" id="name">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Patient Class </label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Assigned Patient Location</label>
-      <input type="datetime" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Admission Type </label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Readmit Number</label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Prior Patient Location</label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Attending Doctor </label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Referred Doctor </label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Consulting Doctor </label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Hospital Service</label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Temporary Location </label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Preadmit Test Indicator</label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Admit Source</label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Ambulatory Status</label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">VIP Indicator</label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Admitting Doctor</label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Patient Type </label>
-      <input type="text" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="name">Visit Number</label>
-      <input type="number" class="form-control" id="name">
+      <label for="dischargeDateTime">Discharge Date/Time</label>
+      <input type="datetime-local"
+             class="form-control"
+             id="dischargeDateTime"
+             [(ngModel)]="PV1.dischargeDateTime" name="dischargeDateTime"
+      >
     </div>
 
     <div class="form-group">
-      <label for="name">Account Status</label>
-      <input type="text" class="form-control" id="name">
+      <label for="bedStatus">Bed Status </label>
+      <input type="text"
+             class="form-control"
+             id="bedStatus"
+             [(ngModel)]="PV1.bedStatus" name="bedStatus"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="patientClass">Patient Class </label>
+      <input type="text"
+             class="form-control"
+             id="patientClass"
+             [(ngModel)]="PV1.patientClass" name="patientClass"
+      >
+    </div>
+    <div class="form-group">
+      <label for="patientLoc">Assigned Patient Location</label>
+      <input type="text"
+             class="form-control"
+             id="patientLoc"
+             [(ngModel)]="PV1.patientLoc" name="patientLoc"
+      >
+    </div>
+    <div class="form-group">
+      <label for="admType">Admission Type </label>
+      <input type="text"
+             class="form-control"
+             id="admType"
+             [(ngModel)]="PV1.admType" name="admType"
+      >
+    </div>
+    <div class="form-group">
+      <label for="readmitNum">Readmit Number</label>
+      <input type="text"
+             class="form-control"
+             id="readmitNum"
+             [(ngModel)]="PV1.readmitNum" name="readmitNum"
+      >
+    </div>
+    <div class="form-group">
+      <label for="patLoc">Prior Patient Location</label>
+      <input type="text"
+             class="form-control"
+             id="patLoc"
+             [(ngModel)]="PV1.patLoc" name="patLoc"
+      >
+    </div>
+    <div class="form-group">
+      <label for="attendDr">Attending Doctor </label>
+      <input type="text"
+             class="form-control"
+             id="attendDr"
+             [(ngModel)]="PV1.attendDr" name="attendDr"
+      >
+    </div>
+    <div class="form-group">
+      <label for="refDr">Referred Doctor </label>
+      <input type="text"
+             class="form-control"
+             id="refDr"
+             [(ngModel)]="PV1.refDr" name="refDr"
+      >
+    </div>
+    <div class="form-group">
+      <label for="consultDr">Consulting Doctor </label>
+      <input type="text"
+             class="form-control"
+             id="consultDr"
+             [(ngModel)]="PV1.consultDr" name="consultDr"
+      >
+    </div>
+    <div class="form-group">
+      <label for="hospServ">Hospital Service</label>
+      <input type="text"
+             class="form-control"
+             id="hospServ"
+             [(ngModel)]="PV1.hospServ" name="hospServ"
+      >
+    </div>
+    <div class="form-group">
+      <label for="tempLoc">Temporary Location </label>
+      <input type="text"
+             class="form-control"
+             id="tempLoc"
+             [(ngModel)]="PV1.tempLoc" name="tempLoc"
+      >
+    </div>
+    <div class="form-group">
+      <label for="admitDr">Admitting Doctor</label>
+      <input type="text"
+             class="form-control"
+             id="admitDr"
+             [(ngModel)]="PV1.admitDr" name="admitDr"
+      >
+    </div>
+    <div class="form-group">
+      <label for="patientType">Patient Type </label>
+      <input type="text"
+             class="form-control"
+             id="patientType"
+             [(ngModel)]="PV1.patientType" name="patientType"
+      >
+    </div>
+    <div class="form-group">
+      <label for="visitNum">Visit Number</label>
+      <input type="number"
+             class="form-control"
+             id="visitNum"
+             [(ngModel)]="PV1.visitNum" name="visitNum"
+      >
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit PV1 Data</button>

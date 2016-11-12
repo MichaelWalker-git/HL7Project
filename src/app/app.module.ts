@@ -1,4 +1,3 @@
-import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +14,6 @@ import { InputComponent } from './patientVisit/input.component';
     InputComponent
   ],
   imports: [
-    MaterialModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule
@@ -24,4 +22,3 @@ import { InputComponent } from './patientVisit/input.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-export class PizzaPartyAppModule { }
