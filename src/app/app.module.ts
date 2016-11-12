@@ -1,12 +1,11 @@
-import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { InputBoxComponent } from './input-box/input-box.component';
-import { InputComponent } from './input/input.component';
+import { InputBoxComponent } from './formComponents/input-box/input-box.component';
+import { InputComponent } from './formComponents/patientVisit/input.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { InputComponent } from './input/input.component';
     InputComponent
   ],
   imports: [
-    MaterialModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule
@@ -24,4 +22,3 @@ import { InputComponent } from './input/input.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-export class PizzaPartyAppModule { }
