@@ -37,19 +37,16 @@ Parse and stringify all the necessary parameters of the PID and  PV1 section of 
 
 Example Inputs: 
 Inputs:
-
-      260 Goodwin Crest Dr,
-      Birmingham, AL, 35209
-      
-      M Nickell\s Piockeels
-      10000 100th Ave
-      Birmingham, AL , 35200
-      
-      
+            "PID",
+            "",                                   //Blank field 
+            ["0493575", "", "", "2", "", "ID 1"],  //Multiple components 
+            "454721",
+            "",
+            ["DOE", "JOHN", "", "", "", ""],
+            "19480203"
       
 Output:
-        PID|||56782445^^^UAReg^PI||KLEINSAMPLE^BARRY^Q^JR||19620910|M||2028-9^^HL70005^RA99113^^XYZ|260 GOODWIN CREST DRIVE^^BIRMINGHAM^AL^35209^^M~NICKELL’S PICKLES^10000 W 100TH AVE^BIRMINGHAM^AL^35200^^O|||||||0105I30001^^^99DEF^AN
-        PV1||I|W^389^1^UABH^^^^3||||12345^MORGAN^REX^J^^^MD^0010^UAMC^L||67890^GRAINGER^LUCY^X^^^MD^0010^UAMC^L|MED|||||A0||13579^POTTER^SHERMAN^T^^^MD^0010^UAMC^L|||||||||||||||||||||||||||200605290900
+        PID||0493575^^^2^^ID 1|454721||DOE^JOHN^^^^|19480203
 
 
 

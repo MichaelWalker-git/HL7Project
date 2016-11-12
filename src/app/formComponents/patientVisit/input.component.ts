@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from "@angular/forms";
+var hl7    = require('simple-hl7');
 
 @Component({
   selector: 'app-input',
@@ -16,7 +17,7 @@ import { NgForm } from "@angular/forms";
 })
 export class InputComponent {
   PV1 = {
-    table: 'PID',
+    table: 'PV1',
     setId: '',
     admitDateTime: '',
     dischargeDateTime: '',
@@ -36,8 +37,20 @@ export class InputComponent {
     visitNum: ''
   };
 
+  parsedItem = '';
+
   onSubmit(form: NgForm) {
-
-
+    event.preventDefault();
+    var result = [];
+    result.push(this.PV1.table);
+    delete this.PV1.table;
+    for (let prop in this.PV1) {
+      result.push(this.PV1[prop])
+    }
+    var adt = new hl7.Message();
+    adt.addSegment(result);
+    adt.header.delimiters.segmentSeperator = '\n';
+    var item = adt.toString().slice(9);
+    this.parsedItem = item;
   }
 }

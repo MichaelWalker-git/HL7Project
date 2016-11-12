@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from "@angular/forms";
-var message = require ('./../message');
+var hl7    = require('simple-hl7');
 
 @Component({
   selector: 'app-input-box',
@@ -30,20 +30,22 @@ export class InputBoxComponent {
     homeNum: '',
     ssn: '',
     driverLicense: ''
+  };
 
-  }
+  parsedItem = '';
 
-  onSubmit(form: NgForm){
+  onSubmit(form: NgForm) {
     event.preventDefault();
     var result = [];
-    for(let prop in form.value.PIData){
-      result.push(form.value.PIData[prop])
+    result.push(this.PID.table);
+    delete this.PID.table;
+    for (let prop in this.PID) {
+      result.push(this.PID[prop])
     }
-    console.log("What?")
-    var final = new message(result);
-    console.log(final);
-
-
+    var adt = new hl7.Message();
+    adt.addSegment(result);
+    adt.header.delimiters.segmentSeperator = '\n';
+    var item = adt.toString().slice(9);
+    this.parsedItem = item;
   }
-
 }
