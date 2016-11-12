@@ -1,8 +1,0 @@
-function(array){
-  this.name = array.table;
-  this.delimiters = {
-    fieldSep: "|",
-    componentSep: "^",
-  }
-
-}
