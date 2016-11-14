@@ -1,3 +1,4 @@
+import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -11,9 +12,11 @@ import { InputComponent } from './formComponents/patientVisit/input.component';
   declarations: [
     AppComponent,
     InputBoxComponent,
-    InputComponent
+    InputComponent,
+
   ],
   imports: [
+    MaterialModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule
