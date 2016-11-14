@@ -50,7 +50,7 @@ export class InputComponent {
     var adt = new hl7.Message();
     adt.addSegment(result);
     adt.header.delimiters.segmentSeperator = '\n';
-    var item = adt.toString().slice(9);
+    var item = adt.toString().slice(9).replace(/,/g , '|');
     this.parsedItem = item;
   }
 }
