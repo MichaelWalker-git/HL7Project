@@ -11,6 +11,7 @@
                id="extPatientId"
                [(ngModel)]="PID.extPatientId"
                name="extPatientId"
+               placeholder="External Patient Id"
                required
         >
       </div>
@@ -20,6 +21,7 @@
                class="form-control"
                id="intPatientId"
                [(ngModel)]="PID.intPatientId"
+               placeholder="Internal Patient Id"
                name="intPatientId"
         >
       </div>
@@ -30,6 +32,7 @@
                id="name"
                [(ngModel)]="PID.name"
                name="name"
+               placeholder="Full Name"
                required
                #name="ngModel" >
           <div [hidden]="name.valid || name.pristine"
@@ -44,6 +47,7 @@
                id="maidenName"
                [(ngModel)]="PID.maidenName"
                name="maidenName"
+               placeholder="Maiden Name"
         >
       </div>
       <div class="form-group">
@@ -54,14 +58,20 @@
                name="birth"
         >
       </div>
-      <div class="form-group">
+      <div class="form-group" >
         <label for="sex">Sex </label>
         <input type="text"
-               class="form-control"
                id="sex"
                [(ngModel)]="PID.sex"
                name="sex"
-               required>
+               list="sexType"
+               required
+        >
+        <datalist id="sexType">
+          <option value="Female">
+          <option value="Male">
+          <option value="Does not want to self-identify">
+        </datalist>
       </div>
       <div class="form-group">
         <label for="marital">Marital Status: </label>
@@ -70,6 +80,12 @@
                id="marital"
                [(ngModel)]="PID.marital"
                name="marital">
+               list="maritalStatus"
+        >
+        <datalist id="maritalStatus">
+          <option value="Married">
+          <option value="Single">
+        </datalist>
       </div>
       <div class="form-group">
         <label for="address">Patient Address </label>
@@ -78,32 +94,36 @@
                id="address"
                [(ngModel)]="PID.address"
                name="address"
+               placeholder="Street, City, State, Zipcode"
                required>
       </div>
       <div class="form-group">
         <label for="phoneNum">Phone Number - Mobile  </label>
-        <input type="number"
+        <input type="tel"
                class="form-control"
                id="phoneNum"
                [(ngModel)]="PID.mobileNum" name="phoneNum"
+               placeholder="(000)-421-9999"
                required
         >
       </div>
       <div class="form-group">
         <label for="homePhone">Patient Number - Home </label>
-        <input type="text"
+        <input type="tel"
                class="form-control"
                id="homePhone"
                [(ngModel)]="PID.homeNum"
+               placeholder="(000)-421-9999"
                name="homeNum"
         >
       </div>
       <div class="form-group">
         <label for="ssn">SSN Number - Patient </label>
-        <input type="text"
+        <input type="password"
                class="form-control"
                id="ssn"
                [(ngModel)]="PID.ssn"
+               placeholder="421-42-9999"
                name="ssn"
         >
       </div>
@@ -114,6 +134,7 @@
                id="driverLicense"
                [(ngModel)]="PID.driverLicense"
                name="driverLicense"
+               placeholder="E421999"
         >
       </div>
     </div>
