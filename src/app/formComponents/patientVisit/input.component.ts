@@ -16,10 +16,12 @@ var hl7    = require('simple-hl7');
   `]
 })
 export class InputComponent {
+  today = new Date().toJSON().slice(0,19);
+
   PV1 = {
     table: 'PV1',
     setId: '',
-    admitDateTime: '',
+    admitDateTime: this.today,
     dischargeDateTime: '',
     bedStatus: '',
     patientClass: '',
