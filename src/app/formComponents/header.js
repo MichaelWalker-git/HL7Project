@@ -14,27 +14,25 @@ function header() {
 
   this.fields = [];
   if (arguments.length > 1) {
-    for (var i = 0; i < arguments.length; i++) {
-      if (Array.isArray(arguments[i])) {
+    arguments.map(function (current) {
+      if(Array.isArray(current)){
         var fields = new Array();
-        for (var ii = 0; ii < arguments[i].length; ii++) {
-          fields.push(new field(arguments[i][ii]));
-        }
+        current.map(function (subCurr) {
+          fields.push(new field(subCurr));
+        })
         this.fields.push(fields);
-      } else {
-        for (var i = 0; i < arguments.length; i++) {
-          this.fields.push(new field(arguments[i]));
-        }
+      }
+    })else {
+      for (var i = 0; i < arguments.length; i++) {
+        this.fields.push(new field(arguments[i]));
       }
     }
   }
 }
 
-
 header.prototype.addField = function(fieldValue) {
   this.fields.push(new field(fieldValue));
 };
-
 
 header.prototype.toString = function() {
   var returnString =

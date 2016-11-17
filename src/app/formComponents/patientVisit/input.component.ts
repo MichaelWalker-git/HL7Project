@@ -44,9 +44,19 @@ export class InputComponent {
     var result = [];
     result.push(this.PV1.table);
     delete this.PV1.table;
+    this.PV1.attendDr = this.PV1.attendDr + " " + this.PV1.refDr +  " " + this.PV1.consultDr;
+    delete this.PV1.refDr;
+    delete this.PV1.consultDr;
+    console.log("PV1", this.PV1);
     for (let prop in this.PV1) {
+      var instance = this.PV1[prop];
+      if(prop === 'tempLoc' || prop === 'attendDr') {
+        console.log("INSIDE", prop)
+        instance = instance.replace(/ /g , '^');
+      }
       result.push(this.PV1[prop])
     }
+    console.log(result);
     var adt = new hl7.Message();
     adt.addSegment(result);
     adt.header.delimiters.segmentSeperator = '\n';

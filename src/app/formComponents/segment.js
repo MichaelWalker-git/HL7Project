@@ -25,7 +25,6 @@ var segment = function() {
 };
 
 segment.prototype.addField = function(fieldValue, position) {
-  //position is optional
   if(position) {
     if (this.fields.length > (position - 1)){
       this.editField(position, fieldValue);

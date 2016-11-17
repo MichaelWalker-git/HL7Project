@@ -8,19 +8,18 @@ function message() {
   this.header = new header();
   this.segments = [];
   if (arguments.length > 0) {
-    for (var i = 0; i < arguments.length; i++) {
-      this.header.addField(arguments[i]);
-    }
+    arguments.map(function(currArg){
+      this.header.addField(currArg);
+    })
   }
 };
 
 message.prototype.addSegment = function() {
-  if (arguments.length == 1) {
+  if (arguments.length === 1) {
     var s = new segment(arguments[0]);
     this.segments.push(s);
     return s;
-  }
-  if (arguments.length > 1) {
+  } else if (arguments.length > 1) {
     var s = new segment(arguments[0]);
     for (var i = 1; i < arguments.length; i++) {
       s.addField(arguments[i]);

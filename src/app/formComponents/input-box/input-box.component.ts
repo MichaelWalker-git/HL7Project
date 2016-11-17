@@ -40,12 +40,17 @@ export class InputBoxComponent {
     result.push(this.PID.table);
     delete this.PID.table;
     for (let prop in this.PID) {
-      result.push(this.PID[prop])
+      var instance = this.PID[prop];
+      if(prop === 'name' || prop === 'address') {
+        instance = instance.replace(/ /g , '^');
+      }
+      result.push(instance)
     }
     var adt = new hl7.Message();
     adt.addSegment(result);
     adt.header.delimiters.segmentSeperator = '\n';
     var item = adt.toString().slice(9).replace(/,/g , '|');
+    console.log("ITEM", result);
     this.parsedItem = item;
   }
 }
