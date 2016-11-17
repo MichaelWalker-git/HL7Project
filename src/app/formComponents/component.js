@@ -1,6 +1,8 @@
 /**
  * Created by MikeTran on 11/11/16.
  */
+
+// This component holds all the values, it is at the top of the hierarchy. It is distributed by field, which is required by header & segment. Finally combined into message.
 function component() {
   this.value = [];
   if (arguments.length > 0) {
