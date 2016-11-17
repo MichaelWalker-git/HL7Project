@@ -1,6 +1,7 @@
 /**
  * Created by MikeTran on 11/11/16.
  */
+// This component holds both the header and segment.
 var component = require('./component');
 var repeatSearch = require('./repeatSearch');
 
