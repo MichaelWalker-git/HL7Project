@@ -1,6 +1,7 @@
 /**
  * Created by MikeTran on 11/11/16.
  */
+// This combines all of the items above (header & segment).
 var header = require('./header');
 var segment = require('./segment');
 
