@@ -1,3 +1,4 @@
+// This component is meant to represent the header title(ie. PIV) and encompass the fields (ie address)
 var field = require('./field');
 var repeatSearch = require('./repeatSearch');
 
