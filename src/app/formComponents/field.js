@@ -2,22 +2,10 @@
  * Created by MikeTran on 11/11/16.
  */
 var component = require('./component');
+var repeatSearch = require('./repeatSearch');
 
 function field() {
-  this.value = [];
-  if (arguments.length > 0) {
-    for (var i = 0; i < arguments.length; i++) {
-      if (Array.isArray(arguments[i])) {
-        var components = new Array();
-        for (var j = 0; j < arguments[i].length; j++) {
-          components.push(new component(arguments[i][j]));
-        }
-        this.value.push(components);
-      } else {
-        this.value.push(new component(arguments[i]));
-      }
-    }
-  }
+  repeatSearch(component, components);
 };
 
 field.prototype.toString = function(delimiters) {

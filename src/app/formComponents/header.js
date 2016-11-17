@@ -1,4 +1,5 @@
 var field = require('./field');
+var repeatSearch = require('./repeatSearch');
 
 function header() {
 
@@ -11,23 +12,7 @@ function header() {
     repititionCharacter: "~",
     segmentSeperator: '\r'
   };
-
-  this.fields = [];
-  if (arguments.length > 1) {
-    arguments.map(function (current) {
-      if(Array.isArray(current)){
-        var fields = new Array();
-        current.map(function (subCurr) {
-          fields.push(new field(subCurr));
-        })
-        this.fields.push(fields);
-      }
-    })else {
-      for (var i = 0; i < arguments.length; i++) {
-        this.fields.push(new field(arguments[i]));
-      }
-    }
-  }
+  repeatSearch(field, fields)
 }
 
 header.prototype.addField = function(fieldValue) {

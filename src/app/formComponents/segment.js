@@ -2,26 +2,11 @@
  * Created by MikeTran on 11/11/16.
  */
 var field = require('./field');
+var repeatSearch = require('./repeatSearch');
 
 var segment = function() {
   this.name = "";
-  this.fields = [];
-  if (arguments.length >= 1) {
-    this.name = arguments[0]
-  }
-  if (arguments.length >= 2) {
-    if (Array.isArray(arguments[i])) {
-      var fields = new Array();
-      for (var ii = 0; ii < arguments[i].length; ii++) {
-        fields.push(new field(arguments[i][ii]));
-      }
-      this.fields.push(fields);
-    } else {
-      for (var i = 1; i < arguments.length; i++) {
-        this.fields.push(new field(arguments[i]));
-      }
-    }
-  }
+  repeatSearch(component, components);
 };
 
 segment.prototype.addField = function(fieldValue, position) {
